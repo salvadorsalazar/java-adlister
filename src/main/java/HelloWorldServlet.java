@@ -17,11 +17,19 @@ public class HelloWorldServlet extends HttpServlet {
         PrintWriter out = res.getWriter();
         out.println("<h1 ><center>Hello, World!</center></h1>");
 
+        //BONUS 1.
         String name = req.getParameter("name");
-        out.println("<h1>Hello , " + name + "</h1>");
+        if(req.getParameter("name") !=null ) {
+            out.println("<h1>Hello , " + name + "</h1>");
+
+        }else{
+            out.println("<h1 ><center>Hello, World!</center></h1>");
+
+        }
+
         out.println("<hr>");
         out.println("<h2 style='color:red'>Change font color of HTML webpage tag</h2>");
-//        out.println("<p> Enter : <h2 style='color:red'> ....</h2> </p>");
+        out.println("<p> Enter :  style='color:red' ...in tag");
 
 
         out.println("<hr>");
@@ -29,9 +37,9 @@ public class HelloWorldServlet extends HttpServlet {
 
 
         out.println("<hr>");
-        out.println("<h2> Bonus\n" +
+        out.println("<h4> Bonus\n" +
                 "\n" +
-                "Make the page say \"Hello, <name>!\" if name is passed as part of the query string (e.g. /hello?name=codeup), otherwise default to \"Hello, World!\".</h2>");
+                "Make the page say \"Hello, <name>!\" if name is passed as part of the query string (e.g. /hello?name=codeup), otherwise default to \"Hello, World!\".</h4>");
 
         out.println("<hr>");
 
