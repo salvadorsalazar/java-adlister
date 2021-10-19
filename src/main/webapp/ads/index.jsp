@@ -14,14 +14,21 @@
         <jsp:param name="title" value="Welcome to my site!" />
     </jsp:include>
 
-    <title>Title</title>
+<%--    <title>Title</title>--%>
+
+    <style>
+        div {
+            border: 2px solid black;
+        }
+    </style>
 </head>
 <body>
 
 <c:forEach var="ad" items="${ads}">
-
+<div>
     <h1>${ad.title}</h1>
     <p>${ad.description}</p>
+</div>
 </c:forEach>
 
 </body>
