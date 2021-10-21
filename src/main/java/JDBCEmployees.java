@@ -1,11 +1,12 @@
+import com.mysql.cj.jdbc.Driver;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mysql.cj.jdbc.Driver;
-
 public class JDBCEmployees {
     public static void main(String[] args) {
+
  try {
 
      DriverManager.registerDriver(new Driver());
@@ -25,11 +26,18 @@ public class JDBCEmployees {
 
      while (resultSet.next()) {
 
-         String firstName = resultSet.getString("first_name");//to create an object /an array in memory
+         String firstName = resultSet.getString("first_name");
 //         System.out.println(resultSet.getString("first_Name"));
-            firstNames.add(firstName);//to create an object /an array in memory
+            firstNames.add(firstName);
          }
      System.out.println(firstNames);
+
+
+
+
+
+
+
 
      }catch (SQLException throwables) {
             throwables.printStackTrace();

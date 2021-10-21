@@ -1,7 +1,10 @@
-import java.sql.*;
 import com.mysql.cj.jdbc.Driver;
-public class JDBCTest {
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+public class JDBCTest {
 
     public static void main(String[] args) {
         try {
@@ -31,8 +34,8 @@ public class JDBCTest {
             Statement statement = connection.createStatement();
 
             // (Select) execute the query with statement
-
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM albums");
+//
+//            ResultSet resultSet = statement.executeQuery("SELECT * FROM albums");
 
            //resultSet.next(); // look at first result
 //            resultSet.next();
@@ -47,9 +50,9 @@ public class JDBCTest {
 //               System.out.println(firstAlbum);
 //           }
 
-            while(resultSet.next()){
-                System.out.println(resultSet.getString("name"));
-            }
+//            while(resultSet.next()){
+//                System.out.println(resultSet.getString("name"));
+//            }
 
 
 
@@ -63,7 +66,25 @@ public class JDBCTest {
             // 1 | Michael Jackson |                  Thriller |         1982 |  47.3 | Pop, Rock, R&B
             // 2 |           AC/DC |             Back in Black |         1980 |  26.1 | Hard rock
             // 3 |      Pink Floyd | The Dark Side of the Moon |         1973 |  24.2 | Progressive rock
-            //
+//            //
+//
+//            Album brandNewAlbum = new Album(
+//                    "The Cure",
+//                    "Disintegration",
+//                    1989,
+//                    15,
+//                    "alt, goth, rock"
+//            );
+//
+//            String insertQuery = String.format("INSERT INTO albums (artist, name, release_date, sales, genre) VALUES ('%s', '%s', %d, %f, '%s')",
+//                    brandNewAlbum.getArtist(),
+//                    brandNewAlbum.getName(),
+//                    brandNewAlbum.getReleaseDate(),
+//                    brandNewAlbum.getSales(),
+//                    brandNewAlbum.getGenre()
+//            );
+//            System.out.println(insertQuery);
+//
 
 
         } catch (SQLException throwables) {
