@@ -23,7 +23,9 @@
     </style>
 </head>
 <body>
-
+<jsp:include page="/partials/navbar.jsp"/>
+<h1>ads</h1>
+<%--JSTL syntax below --%>
 <c:forEach var="ad" items="${ads}">
 <div>
     <h1>${ad.title}</h1>
